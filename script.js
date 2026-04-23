@@ -1,10 +1,15 @@
 const demo = document.getElementById("demo");
 const input = document.getElementById("input");
+const add = document.getElementById("add");
 const addBtn = document.getElementById("addBtn");
 const resetBtn = document.getElementById("resetBtn");
 
 let currentValue = 0;
-let resetValue = "0";
+
+add.addEventListener("click", () => {
+  currentValue++;
+  demo.textContent = currentValue;
+});
 
 addBtn.addEventListener("click", () => {
   const inputValue = parseInt(input.value);
@@ -15,13 +20,8 @@ addBtn.addEventListener("click", () => {
   }
 });
 
-add.addEventListener("click", () => {
-  currentValue++;
-  demo.textContent = currentValue;
-});
-
 resetBtn.addEventListener("click", () => {
-  currentValue = resetValue;
+  currentValue = 0;
   demo.textContent = "0";
   input.value = "";
 });
